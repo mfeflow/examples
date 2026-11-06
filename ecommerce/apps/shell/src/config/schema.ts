@@ -6,4 +6,7 @@ import { z } from 'zod';
 export const runtimeConfigSchema = z.object({
   environment: z.enum(['dev', 'staging', 'prod']),
   apiUrl: z.string().min(1),
+  // Where the shell is served and where it finds the registry, for a host that serves it under a path.
+  basePath: z.string().optional(),
+  registryUrls: z.array(z.string().min(1)).optional(),
 });

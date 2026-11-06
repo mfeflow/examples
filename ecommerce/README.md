@@ -2,6 +2,8 @@
 
 A storefront made with mfeflow 0.8.0. A shell serves three remotes: catalog, cart and checkout. The remotes never import each other. They talk through events and links that the shell and a small contracts package type for them.
 
+Live demo: https://mfeflow.github.io/examples/
+
 ## What happens
 
 1. The catalog loads its product list from `/api/products.json` and shows an "Add to cart" button for each one.
@@ -51,6 +53,22 @@ pnpm dev
 Open http://localhost:4300. The remotes run on 4311 (catalog), 4312 (cart) and 4313 (checkout).
 
 The "mocked API" works in two places. In the browser, the shell's dev server serves `apps/shell/public/api/products.json`. In tests, MSW answers `/api/products.json` from `apps/catalog/src/mocks/handlers.ts`. A remote started on its own (`pnpm dev` inside `apps/catalog`) has no products file, so run it through the shell.
+
+## Live demo
+
+`.github/workflows/pages.yml` publishes this example to GitHub Pages on every push to `main`. `scripts/build-pages.sh` does the work:
+
+1. `MFE_BASE_PATH=/examples pnpm build` builds the shell for a site that lives under `/examples/`. The shell then loads its assets from that path and carries its runtime config inline (`basePath`, `apiUrl`, `registryUrls`).
+2. The shell goes to the site root. Each remote goes through `mfeflow deploy <remote> --env prod --host file:site --base-url https://mfeflow.github.io/examples`, which writes the remote's files and `envs/prod/index.json`, the registry the shell reads.
+3. `404.html` is a copy of `index.html`, so a link like `/examples/cart` opens the shell.
+
+Try the same layout on your machine, with any static server that serves the folder under `/examples/`:
+
+```sh
+scripts/build-pages.sh http://127.0.0.1:4173/examples site
+```
+
+Pages caches every file for 10 minutes, so a rollback there is slow. The [Pages guide](https://mfeflow.github.io/mfeflow/guide/deploy/github-pages) lists the limits.
 
 ## Check it
 

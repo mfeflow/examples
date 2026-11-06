@@ -57,6 +57,24 @@ function devRegistry(): string {
   return `window.__MFE_REGISTRY__=${JSON.stringify(remotes).replaceAll('<', '\\u003c')}`;
 }
 
+// A host that serves the shell under a path (GitHub Pages: /examples) builds with MFE_BASE_PATH. The
+// assets then load from that path, and the runtime config is inlined: the shell would otherwise ask
+// the host root for /config/runtime-config.json, and the registry runtime has no setting for that.
+const basePath = (process.env.MFE_BASE_PATH ?? '').replace(/\/$/, '');
+
+function inlineRuntimeConfig(): string {
+  const prod: unknown = JSON.parse(
+    fs.readFileSync(path.resolve(process.cwd(), 'public/config/runtime-config.prod.json'), 'utf8'),
+  );
+  const config = {
+    ...(typeof prod === 'object' ? prod : {}),
+    apiUrl: `${basePath}/api`,
+    basePath,
+    registryUrls: [`${basePath}/envs/prod/index.json`],
+  };
+  return `window.__MFE_RUNTIME_CONFIG__=${JSON.stringify(config).replaceAll('<', '\\u003c')}`;
+}
+
 export default defineConfig(({ command }) =>
   mergeRsbuildConfig(
     // snapshot: registry entries carry a manifest URL until deploys also publish remoteEntry.
@@ -64,12 +82,15 @@ export default defineConfig(({ command }) =>
     defineConfig({
       // A new or changed remote restarts the dev server, which reads the registry again.
       dev: { watchFiles: { paths: generated ?? registryDir, type: 'restart' } },
+      ...(basePath === '' ? {} : { output: { assetPrefix: `${basePath}/` } }),
       html: {
         title: 'shell',
         tags:
           command === 'dev'
             ? [{ tag: 'script', children: devRegistry(), head: true, append: false }]
-            : [],
+            : basePath === ''
+              ? []
+              : [{ tag: 'script', children: inlineRuntimeConfig(), head: true, append: false }],
       },
     }),
   ),

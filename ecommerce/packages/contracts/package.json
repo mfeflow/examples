@@ -6,6 +6,7 @@
   "exports": {
     "./events": "./src/events/index.ts",
     "./routes/*": "./src/routes/*.ts",
+    "./base": "./src/base.ts",
     "./money": "./src/money.ts"
   }
 }

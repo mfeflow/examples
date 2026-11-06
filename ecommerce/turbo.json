@@ -3,6 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": ["MFE_BASE_PATH"],
       "outputs": ["dist/**"]
     },
     "typecheck": {

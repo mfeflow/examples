@@ -1,3 +1,4 @@
+import { basePath } from '@ecommerce/contracts/base';
 import { createLinks, defineRoutes } from '@mfeflow/route-factory';
 import { createMfeLink } from '@mfeflow/route-factory/react';
 import { routes as checkoutContract } from '@ecommerce/contracts/routes/checkout';
@@ -8,9 +9,12 @@ import { routes as contract } from '@ecommerce/contracts/routes/cart';
 export const routes = defineRoutes('/cart', contract);
 
 // Links to this remote's routes, and to checkout's through its contract. A wrong id fails pnpm typecheck.
-export const links = createLinks({
-  cart: routes,
-  checkout: defineRoutes('/checkout', checkoutContract),
-});
+export const links = createLinks(
+  {
+    cart: routes,
+    checkout: defineRoutes('/checkout', checkoutContract),
+  },
+  { base: basePath },
+);
 
 export const MfeLink = createMfeLink(links);

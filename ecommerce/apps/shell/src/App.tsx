@@ -1,14 +1,15 @@
 import { useEffect, useState, type MouseEvent } from 'react';
+import { stripBase, withBase } from '@ecommerce/contracts/base';
 import { DevOverlay } from '@mfeflow/runtime';
 import { CartBadge } from './cart/CartBadge';
 import { routes, type RouteEntry } from './remotes/route-table';
 import { Theme } from './theme/Theme';
 
 function usePath(): [string, (event: MouseEvent<HTMLAnchorElement>) => void] {
-  const [path, setPath] = useState(location.pathname);
+  const [path, setPath] = useState(() => stripBase(location.pathname));
   useEffect(() => {
     const onPop = () => {
-      setPath(location.pathname);
+      setPath(stripBase(location.pathname));
     };
     addEventListener('popstate', onPop);
     return () => {
@@ -18,7 +19,7 @@ function usePath(): [string, (event: MouseEvent<HTMLAnchorElement>) => void] {
   const go = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     history.pushState(null, '', event.currentTarget.href);
-    setPath(location.pathname);
+    setPath(stripBase(location.pathname));
   };
   return [path, go];
 }
@@ -36,7 +37,7 @@ export function App() {
           <strong>shell</strong>
           <nav>
             {routes.map((route) => (
-              <a key={route.path} href={route.path} onClick={go}>
+              <a key={route.path} href={withBase(route.path)} onClick={go}>
                 {route.path === '/' ? 'home' : route.path.slice(1)}
               </a>
             ))}
