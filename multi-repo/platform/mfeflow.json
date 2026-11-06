@@ -1,0 +1,51 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow.json",
+  "version": 1,
+  "repo": "platform",
+  "topology": "polyrepo",
+  "packageManager": "pnpm",
+  "scope": "@acme",
+  "apps": {},
+  "features": {
+    "core": {
+      "version": "0.6.0"
+    },
+    "polyrepo": {
+      "version": "0.2.1",
+      "options": {
+        "repo": "platform",
+        "name": "",
+        "org": ""
+      }
+    },
+    "lint-oxlint": {
+      "version": "0.2.0"
+    }
+  },
+  "cli": "0.8.0",
+  "files": {
+    ".changeset/README.md": "sha256-b99ea144c801c86b757398027cdfb7904da5c0d596be98747fd69c08a6202178",
+    ".changeset/config.json": "sha256-a10f22a733b50fb4b271f38d1e1fcabc5079fd84d473f546822a7d681a31bff1",
+    ".github/workflows/ci.yml": "sha256-47b668eace778c54130149e8394358dde96a147da34b686c1c732d7b737c678b",
+    ".github/workflows/release.yml": "sha256-1fd89799b106f58c44cc4cd44ca64e325f34ebf3d678153e362885a40ab1f197",
+    ".github/workflows/reusable-ci.yml": "sha256-36ef04a9e39b4cbf30042d0e1ebdd7160dc31686dd662c9afa4b27b4e08410b5",
+    ".gitignore": "sha256-c38dbd97d95a1807c11c546b0fc431e67ce26103893f0b9ce0af3c370167158a",
+    ".nvmrc": "sha256-f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56",
+    ".oxlintrc.json": "sha256-b0458cb57809b0b06268805f910ce02544b89e33a6175b53e70c3541386aaddc",
+    ".prettierignore": "sha256-c5a6be3a40b4f87ee092ab7ea7ff738eb0b68743eb5754420000846ba8ce6628",
+    ".prettierrc.json": "sha256-8c89ccd5b41fc3bc10ca3449ef88994703523e92613c004d0c5fd68d510f539f",
+    "AGENTS.md": "sha256-dcb6a638f22c315c5c6c318b731df355ed201e561bf1e6d4917836458977f1a6",
+    "README.md": "sha256-97cd8dab1fd00572644645db3ef1d8fa9d5050f2f5389b010fe9414a90ccc884",
+    "default.json": "sha256-073056ebe39040bded0f6dd979187acb542bd8e703197622a225dc4a459651fe",
+    "package.json": "sha256-851c679162aac90f63dc907736c10c0717c8862851285f1853d0a2cc7bb032dc",
+    "packages/contracts/package.json": "sha256-8d8e8c52a892e8e867fcb8eb811d1d29ad27b78c141186324e0f2184a5319c7b",
+    "packages/contracts/src/index.ts": "sha256-d6a347db8671eca6080b252bbed19e2c569eebd774c44cb015d2bd82c96db7d1",
+    "packages/contracts/tsconfig.json": "sha256-fc260cbe86688e06932291129be27acbf84fb4b0744efa4cefa4544de09f6f59",
+    "packages/tokens/package.json": "sha256-b41efd08f306e2970b5368b99840114e91e2d8a9e1320ec016ea75659d39896e",
+    "packages/tokens/src/index.ts": "sha256-c454d5d31b6375c6c363a751ec0125112f2e4809f940878d206a368b1fd6ba92",
+    "packages/tokens/tsconfig.json": "sha256-fc260cbe86688e06932291129be27acbf84fb4b0744efa4cefa4544de09f6f59",
+    "pnpm-workspace.yaml": "sha256-998df7eabb6885c2834e778f95556cc6b3623513624ed110917faf75c3356e52",
+    "renovate.json": "sha256-5a690d650675e16bad4eb6ad926810e6e5e247bb8dc9cdb90447f8e3688f0846",
+    "tsconfig.base.json": "sha256-e3010fe9c08df53d3376f315cd288bfdf16d8b23d886e3cb61836b6bc04401fa"
+  }
+}

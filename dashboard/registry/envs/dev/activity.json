@@ -1,0 +1,5 @@
+{
+  "version": "dev",
+  "manifestUrl": "http://localhost:4313/mf-manifest.json",
+  "owner": "team-activity"
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow.json",
+  "version": 1,
+  "repo": "remote",
+  "topology": "polyrepo",
+  "packageManager": "pnpm",
+  "scope": "@acme",
+  "apps": {
+    "cart": {
+      "kind": "remote",
+      "path": "apps/cart",
+      "port": 4312
+    }
+  },
+  "features": {
+    "core": {
+      "version": "0.6.0"
+    },
+    "tsconfig": {
+      "version": "0.3.0"
+    },
+    "polyrepo": {
+      "version": "0.2.1",
+      "options": {
+        "repo": "remote",
+        "name": "cart",
+        "org": ""
+      }
+    },
+    "lint-oxlint": {
+      "version": "0.2.0"
+    },
+    "url-factory": {
+      "version": "0.2.0"
+    },
+    "testing": {
+      "version": "0.2.0"
+    }
+  },
+  "cli": "0.8.0",
+  "files": {
+    ".github/workflows/ci.yml": "sha256-5434a4a6bcccc62edcd5c8b48d15e19e99bb17e6d265db42388de74e1aed2e8d",
+    ".gitignore": "sha256-c38dbd97d95a1807c11c546b0fc431e67ce26103893f0b9ce0af3c370167158a",
+    ".nvmrc": "sha256-f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56",
+    ".oxlintrc.json": "sha256-b0458cb57809b0b06268805f910ce02544b89e33a6175b53e70c3541386aaddc",
+    ".prettierignore": "sha256-c5a6be3a40b4f87ee092ab7ea7ff738eb0b68743eb5754420000846ba8ce6628",
+    ".prettierrc.json": "sha256-8c89ccd5b41fc3bc10ca3449ef88994703523e92613c004d0c5fd68d510f539f",
+    "AGENTS.md": "sha256-064dcdb3cd4326282da1334315d07ca6c040cf820185d34286b704e70bd71c1d",
+    "README.md": "sha256-42cda2d1e0625896b121e645416bd9ae059016dea18c2d4215a0edc4fd7dcf85",
+    "apps/cart/mfeflow.app.json": "sha256-f77787a71dd932f5041a20a0917ab553b404602dc0af1388d40f351fc1dd8574",
+    "apps/cart/package.json": "sha256-6e7193f1586f183820876fed80e49c7814c34d790367f099ea316fc107ea9c91",
+    "apps/cart/rsbuild.config.ts": "sha256-da28f3b8e7fe8e65a2d5643a28bf867bf7800902e81752523b563f77e7dfef0c",
+    "apps/cart/src/api/endpoints.ts": "sha256-5d1d4aad6b0c95bf5257497f8f7a20f8d8bdcbd663199193d0ce3a2a10e68d5a",
+    "apps/cart/src/bootstrap.tsx": "sha256-4a7ec2392533bdd229e4a51adaadacbe82a1a00b4ed16ade6283e9d52acd25c9",
+    "apps/cart/src/env.d.ts": "sha256-a1bbdd24c11ea91b8f781d1c7e5128e6423f7a46d03d30d15ec4057ea437cf06",
+    "apps/cart/src/exposed/App.test.tsx": "sha256-6fafe8adcd58b6054cd6e6d9efcd42cd2bed5c4295ba60ce320ca845ee10d831",
+    "apps/cart/src/exposed/App.tsx": "sha256-45df43d4502df5ad73218e84bd4eb4aa04f1d7c39ce7f1bfdcaaec0042f6d135",
+    "apps/cart/src/index.ts": "sha256-3998e3c0580af279fd7aedcfcd99e09bac06379867f8aa6bff4c91b251cb9e2f",
+    "apps/cart/src/mocks/handlers.test.ts": "sha256-c47a0138f5d67bc8b2fdb164e8deb1b41af81ae35d42466a67c27c64a6b87bd9",
+    "apps/cart/src/mocks/handlers.ts": "sha256-1c5eb1f3096ee8d69942babbcead26f5998a1b14144fe4ea5c61ff13713522dc",
+    "apps/cart/src/mocks/server.ts": "sha256-97937c844e60e1ecff4890e5f03e9e26a35ed129bd1f1e8ebe282641f25475f6",
+    "apps/cart/src/test/setup.ts": "sha256-d9750d1e803dd81eb50a7b5344081ce39aa81f6cbd4bb3c494fd1cd519b8cd16",
+    "apps/cart/tsconfig.json": "sha256-84d3c5c998d9195ca6080365f37b1f7f49dabc708a967f1ba99ad409d9f422d9",
+    "apps/cart/vitest.config.ts": "sha256-ca7ceac4a0adfec6bc7bcbae89ce768a664e423074df0ed7240a148adad24a9e",
+    "e2e/smoke.spec.ts": "sha256-a5c85ff3c22be9699415f5a5acfe8f51a6710edbd861bf9c38d3ab3ad9b9e79e",
+    "package.json": "sha256-551a16a0e648780c3163d6f61b5e3e7ba2e988274f16b1800e68e496e44675b0",
+    "playwright.config.ts": "sha256-75fcbe6e2e44c9927a962e11f63893cbfd55fb5f422c9cf218ef73a8c73075b3",
+    "pnpm-workspace.yaml": "sha256-da5dcd6f613be657903b500ba746c1c1f25628cf2c9a4da87e9fa31f8182af44",
+    "renovate.json": "sha256-5a690d650675e16bad4eb6ad926810e6e5e247bb8dc9cdb90447f8e3688f0846",
+    "tsconfig.json": "sha256-c6266782909c2582b2f853178f916a411547eace88dc4753d6fe6f8d61cef5da",
+    "turbo.json": "sha256-b34ff89c46b5b64094f90155402ab3cd7c5c4b8117b5205339c998206626c11a",
+    "vitest.config.ts": "sha256-9b9e31f975bd3051f6c6c551c98edada6e864d2286312c869edb4a864779dcb4"
+  }
+}

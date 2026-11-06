@@ -1,0 +1,12 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow-app.json",
+  "name": "catalog",
+  "owner": "team-catalog",
+  "shells": ["shell"],
+  "routes": ["/catalog"],
+  "exposes": ["./App"],
+  "events": {
+    "publishes": ["mfe.ready.v1", "cart.item-added.v1"],
+    "consumes": ["mfe.ready.v1"]
+  }
+}

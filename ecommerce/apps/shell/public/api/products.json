@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "sku": "mug-01", "name": "Enamel mug", "priceCents": 1800 },
+    { "sku": "bag-02", "name": "Canvas tote", "priceCents": 2400 },
+    { "sku": "pen-03", "name": "Brass pen", "priceCents": 900 }
+  ]
+}

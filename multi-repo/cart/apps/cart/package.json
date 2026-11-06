@@ -1,0 +1,35 @@
+{
+  "name": "@acme/cart",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@acme/contracts": "link:../../../platform/packages/contracts",
+    "@acme/tokens": "link:../../../platform/packages/tokens",
+    "@mfeflow/url-factory": "^0.8.0",
+    "@module-federation/enhanced": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@mfeflow/rsbuild": "^0.8.0",
+    "@mfeflow/testing": "^0.8.0",
+    "@mfeflow/tsconfig": "^0.8.0",
+    "@rsbuild/core": "catalog:",
+    "@testing-library/dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "jsdom": "catalog:",
+    "msw": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}

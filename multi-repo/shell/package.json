@@ -1,0 +1,37 @@
+{
+  "name": "acme-shell",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "devDependencies": {
+    "@mfeflow/oxlint-config": "^0.8.0",
+    "@mfeflow/tsconfig": "^0.8.0",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
+    "mfeflow": "^0.8.0",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "doctor": "mfeflow doctor",
+    "validate": "mfeflow validate",
+    "check-compat": "mfeflow check-compat",
+    "budget": "mfeflow budget",
+    "typecheck": "turbo run typecheck",
+    "lint": "oxlint --type-aware --deny-warnings",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "typecheck:tooling": "tsc --noEmit"
+  }
+}

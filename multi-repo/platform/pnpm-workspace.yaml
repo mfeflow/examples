@@ -1,0 +1,22 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Dependencies allowed to run install scripts. esbuild (pulled in by Storybook) and workerd (pulled in
+# by wrangler) work without their script; listing them as false keeps pnpm from stopping the install to ask.
+allowBuilds:
+  lefthook: true
+  esbuild: false
+  workerd: false
+catalog:
+  "@changesets/cli": 3.0.3
+  typescript: 7.0.2
+  oxlint: 1.90.0
+  oxlint-tsgolint: 7.0.2005
+  prettier: 3.9.10
+minimumReleaseAgeExclude:
+  - "@mfeflow/contracts@0.8.0"
+  - "@mfeflow/core@0.8.0"
+  - "@mfeflow/oxlint-config@0.8.0"
+  - "@mfeflow/registry@0.8.0"
+  - mfeflow@0.8.0
