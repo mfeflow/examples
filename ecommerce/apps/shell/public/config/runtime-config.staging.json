@@ -1,0 +1,4 @@
+{
+  "environment": "staging",
+  "apiUrl": "/api"
+}

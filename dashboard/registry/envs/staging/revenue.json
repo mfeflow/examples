@@ -1,0 +1,5 @@
+{
+  "version": "0.0.0",
+  "manifestUrl": "https://staging.example.com/mfe/revenue/mf-manifest.json",
+  "owner": "team-revenue"
+}

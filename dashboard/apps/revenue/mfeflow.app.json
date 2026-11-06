@@ -1,0 +1,8 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow-app.json",
+  "name": "revenue",
+  "owner": "team-revenue",
+  "shells": ["shell"],
+  "routes": ["/revenue"],
+  "exposes": ["./App"]
+}

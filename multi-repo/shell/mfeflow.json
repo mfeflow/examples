@@ -1,0 +1,89 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow.json",
+  "version": 1,
+  "repo": "shell",
+  "topology": "polyrepo",
+  "packageManager": "pnpm",
+  "scope": "@acme",
+  "apps": {
+    "shell": {
+      "kind": "shell",
+      "path": "apps/shell",
+      "port": 4300
+    }
+  },
+  "features": {
+    "core": {
+      "version": "0.6.0"
+    },
+    "tsconfig": {
+      "version": "0.3.0"
+    },
+    "polyrepo": {
+      "version": "0.2.1",
+      "options": {
+        "repo": "shell",
+        "name": "",
+        "org": ""
+      }
+    },
+    "lint-oxlint": {
+      "version": "0.2.0"
+    },
+    "url-factory": {
+      "version": "0.2.0"
+    },
+    "testing": {
+      "version": "0.2.0"
+    }
+  },
+  "cli": "0.8.0",
+  "files": {
+    ".github/workflows/ci.yml": "sha256-5434a4a6bcccc62edcd5c8b48d15e19e99bb17e6d265db42388de74e1aed2e8d",
+    ".gitignore": "sha256-c38dbd97d95a1807c11c546b0fc431e67ce26103893f0b9ce0af3c370167158a",
+    ".nvmrc": "sha256-f14b4987904bcb5814e4459a057ed4d20f58a633152288a761214dcd28780b56",
+    ".oxlintrc.json": "sha256-b0458cb57809b0b06268805f910ce02544b89e33a6175b53e70c3541386aaddc",
+    ".prettierignore": "sha256-c5a6be3a40b4f87ee092ab7ea7ff738eb0b68743eb5754420000846ba8ce6628",
+    ".prettierrc.json": "sha256-8c89ccd5b41fc3bc10ca3449ef88994703523e92613c004d0c5fd68d510f539f",
+    "AGENTS.md": "sha256-eca5ed3ffa7d8e97e8c6c9c52b5c9544166988bd998560eefb557589f3b1a209",
+    "README.md": "sha256-7d3adda5c5c76472952152d8864e021f4736dacab3047862b9adc25617047c5e",
+    "apps/shell/mfeflow.app.json": "sha256-d5a688d9abf7a73eb7caf9a1f148a0c43a143188458c9d1b0994cfb37cd642c3",
+    "apps/shell/package.json": "sha256-22b7773a170950871203eceb8700b0bdcc4f3bc34a35ec0ddccf08bd02a3cda0",
+    "apps/shell/public/config/runtime-config.dev.json": "sha256-854c49d6b8e6f77896aabce40a3e7f929f35d95127b401fc9e1b5c844365e0f0",
+    "apps/shell/public/config/runtime-config.prod.json": "sha256-0955d3c6b146d4a37f8a693ba3c387974f49681ddf2e2fb65bd004ba41b4e90d",
+    "apps/shell/public/config/runtime-config.staging.json": "sha256-745471e4d4175375d7e99f4bd3db277564b0276150a1fd3fc484ad50a5b8f40a",
+    "apps/shell/rsbuild.config.ts": "sha256-71e60668eeeeb324f3421974b2f413bd86d3a68ae7488f1a6af8bba5c48ac531",
+    "apps/shell/src/App.tsx": "sha256-f9710d15f020c4974a80cf7630833a0cb23029465d99110bacef33752ae6590f",
+    "apps/shell/src/api/endpoints.ts": "sha256-5d1d4aad6b0c95bf5257497f8f7a20f8d8bdcbd663199193d0ce3a2a10e68d5a",
+    "apps/shell/src/assert.ts": "sha256-5359ddd8d4464995fa623157c1dec096080c7c36847f2b5fcb3a4fd012e37732",
+    "apps/shell/src/bootstrap.tsx": "sha256-396440bbc6b5f82ecaa97b3af9aab1215d76578345122b5fe4ed8a579f18c468",
+    "apps/shell/src/env.d.ts": "sha256-a1bbdd24c11ea91b8f781d1c7e5128e6423f7a46d03d30d15ec4057ea437cf06",
+    "apps/shell/src/index.ts": "sha256-1954550e6b20a18e5d2d4292f96fe04ed2d1af3575faeaf68cfaf481c912d32b",
+    "apps/shell/src/mocks/handlers.test.ts": "sha256-c47a0138f5d67bc8b2fdb164e8deb1b41af81ae35d42466a67c27c64a6b87bd9",
+    "apps/shell/src/mocks/handlers.ts": "sha256-1c5eb1f3096ee8d69942babbcead26f5998a1b14144fe4ea5c61ff13713522dc",
+    "apps/shell/src/mocks/server.ts": "sha256-97937c844e60e1ecff4890e5f03e9e26a35ed129bd1f1e8ebe282641f25475f6",
+    "apps/shell/src/pages/Home.test.tsx": "sha256-0c85dfa7d055703f8a3a0b715398cfa19999643fbbd8d2123ed553aa14a2ae0e",
+    "apps/shell/src/pages/Home.tsx": "sha256-962880da2be34e763cf53704507fb49678510eba16c2331f7990dc5900803371",
+    "apps/shell/src/remotes/cart.tsx": "sha256-41d4f4b17eb0b4d5e46ea0f55cf7e0dbfd82d6a2ad63327805ba5b579ab398d2",
+    "apps/shell/src/remotes/catalog.tsx": "sha256-92ad62bf89897b025108520abfa74db51f9164ea36c8cba52ca643c42c76f64f",
+    "apps/shell/src/remotes/route-table.tsx": "sha256-ecd733fa9a21e9bbe5b59db46b103fbddee58a30beeb0f447208fa9b1edec4df",
+    "apps/shell/src/test/setup.ts": "sha256-d9750d1e803dd81eb50a7b5344081ce39aa81f6cbd4bb3c494fd1cd519b8cd16",
+    "apps/shell/tsconfig.json": "sha256-84d3c5c998d9195ca6080365f37b1f7f49dabc708a967f1ba99ad409d9f422d9",
+    "apps/shell/vitest.config.ts": "sha256-ca7ceac4a0adfec6bc7bcbae89ce768a664e423074df0ed7240a148adad24a9e",
+    "e2e/smoke.spec.ts": "sha256-a5c85ff3c22be9699415f5a5acfe8f51a6710edbd861bf9c38d3ab3ad9b9e79e",
+    "package.json": "sha256-74c4358b19488d76467e41fe9a9ab95bbfecf4b7d6ead88be90edc43cf94f757",
+    "playwright.config.ts": "sha256-75fcbe6e2e44c9927a962e11f63893cbfd55fb5f422c9cf218ef73a8c73075b3",
+    "pnpm-workspace.yaml": "sha256-da5dcd6f613be657903b500ba746c1c1f25628cf2c9a4da87e9fa31f8182af44",
+    "registry/envs/dev/.gitkeep": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "registry/envs/prod/.gitkeep": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "registry/envs/prod/cart.json": "sha256-fcd6db7ceccf6ecdbf0c5da40a175f08ccf71f7a0c54dbbe3da5cd232d5a748c",
+    "registry/envs/prod/catalog.json": "sha256-b471bb1fc0812d42a2a7aa64010fcbfda092f0f28e1251a989355c07b0a2428e",
+    "registry/envs/staging/.gitkeep": "sha256-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "registry/envs/staging/cart.json": "sha256-ad506ba89831111de4771f2c32bbccec12fb8639db9a8e6dba20b42efa1ea724",
+    "registry/envs/staging/catalog.json": "sha256-7102f52435660a9207012c2c9d773bf7d98f0521c912b06391b52f8c61698a2d",
+    "renovate.json": "sha256-5a690d650675e16bad4eb6ad926810e6e5e247bb8dc9cdb90447f8e3688f0846",
+    "tsconfig.json": "sha256-c6266782909c2582b2f853178f916a411547eace88dc4753d6fe6f8d61cef5da",
+    "turbo.json": "sha256-b34ff89c46b5b64094f90155402ab3cd7c5c4b8117b5205339c998206626c11a",
+    "vitest.config.ts": "sha256-9b9e31f975bd3051f6c6c551c98edada6e864d2286312c869edb4a864779dcb4"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow-app.json",
+  "name": "checkout",
+  "owner": "team-checkout",
+  "shells": ["shell"],
+  "routes": ["/checkout"],
+  "exposes": ["./App"],
+  "events": {
+    "publishes": ["mfe.ready.v1", "order.placed.v1"],
+    "consumes": ["mfe.ready.v1", "cart.lines.v1"]
+  }
+}

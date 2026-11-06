@@ -1,0 +1,14 @@
+{
+  "title": "Recent orders",
+  "loading": "Loading orders...",
+  "error": "Could not load orders.",
+  "filter": "Status",
+  "all": "All",
+  "paid": "Paid",
+  "pending": "Pending",
+  "refunded": "Refunded",
+  "empty": "No orders match.",
+  "customer": "Customer",
+  "total": "Total",
+  "status": "Status"
+}

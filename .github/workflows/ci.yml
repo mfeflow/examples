@@ -1,0 +1,67 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  example:
+    name: ${{ matrix.dir }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dir: ecommerce
+            pm: ecommerce/package.json
+            nvmrc: ecommerce/.nvmrc
+          - dir: dashboard
+            pm: dashboard/package.json
+            nvmrc: dashboard/.nvmrc
+          - dir: multi-repo
+            pm: multi-repo/platform/package.json
+            nvmrc: multi-repo/platform/.nvmrc
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+        with:
+          package_json_file: ${{ matrix.pm }}
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: ${{ matrix.nvmrc }}
+
+      - name: Install, build, typecheck, lint and test
+        if: matrix.dir != 'multi-repo'
+        working-directory: ${{ matrix.dir }}
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+          pnpm typecheck
+          pnpm lint
+          pnpm test
+
+      # The shell and the remotes link to ../platform, so the platform builds first.
+      - name: Build the platform, then each repo
+        if: matrix.dir == 'multi-repo'
+        working-directory: multi-repo
+        run: |
+          for repo in platform shell catalog cart; do
+            echo "::group::$repo"
+            (cd "$repo" && pnpm install --frozen-lockfile && pnpm build && pnpm typecheck)
+            echo "::endgroup::"
+          done
+          for repo in shell catalog cart; do
+            echo "::group::$repo lint and test"
+            (cd "$repo" && pnpm lint && pnpm test)
+            echo "::endgroup::"
+          done

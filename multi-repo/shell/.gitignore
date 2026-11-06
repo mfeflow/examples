@@ -1,0 +1,12 @@
+node_modules/
+dist/
+storybook-static/
+.turbo/
+coverage/
+*.tsbuildinfo
+.mfeflow/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store

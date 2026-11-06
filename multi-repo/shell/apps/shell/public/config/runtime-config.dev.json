@@ -1,0 +1,7 @@
+{
+  "environment": "dev",
+  "devRemotes": {
+    "catalog": "http://localhost:4311/mf-manifest.json",
+    "cart": "http://localhost:4312/mf-manifest.json"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Revenue",
+  "loading": "Loading revenue...",
+  "error": "Could not load revenue.",
+  "collected": "Collected",
+  "average": "Average paid order",
+  "refunded": "Refunded"
+}

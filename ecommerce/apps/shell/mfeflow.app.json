@@ -1,0 +1,12 @@
+{
+  "$schema": "https://mfeflow.github.io/mfeflow/schema/mfeflow-app.json",
+  "name": "shell",
+  "owner": "team-shell",
+  "shells": [],
+  "routes": [],
+  "exposes": [],
+  "events": {
+    "publishes": ["cart.lines.v1"],
+    "consumes": ["cart.item-added.v1", "order.placed.v1"]
+  }
+}

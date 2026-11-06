@@ -1,0 +1,51 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Dependencies allowed to run install scripts. esbuild (pulled in by Storybook) and workerd (pulled in
+# by wrangler) work without their script; listing them as false keeps pnpm from stopping the install to ask.
+allowBuilds:
+  lefthook: true
+  esbuild: false
+  workerd: false
+catalog:
+  turbo: 2.11.10
+  "@module-federation/enhanced": 2.9.2
+  react: 19.3.1
+  react-dom: 19.3.1
+  "@rsbuild/core": 2.3.0
+  "@types/node": 26.6.6
+  "@types/react": 19.3.0
+  "@types/react-dom": 19.3.0
+  typescript: 7.0.2
+  oxlint: 1.90.0
+  oxlint-tsgolint: 7.0.2005
+  prettier: 3.9.10
+  "@t3-oss/env-core": 0.13.11
+  zod: 4.6.7
+  vitest: 5.0.5
+  jsdom: 30.1.3
+  "@testing-library/react": 16.3.3
+  "@testing-library/dom": 10.4.2
+  msw: 3.0.3
+  "@playwright/test": 1.64.1
+  i18next: 26.5.12
+  react-i18next: 17.1.9
+  "@tanstack/react-query": 5.105.0
+minimumReleaseAgeExclude:
+  - "@mfeflow/analytics@0.8.0"
+  - "@mfeflow/bundler-shared@0.8.0"
+  - "@mfeflow/contracts@0.8.0"
+  - "@mfeflow/core@0.8.0"
+  - "@mfeflow/http@0.8.0"
+  - "@mfeflow/i18n@0.8.0"
+  - "@mfeflow/oxlint-config@0.8.0"
+  - "@mfeflow/registry@0.8.0"
+  - "@mfeflow/rsbuild@0.8.0"
+  - "@mfeflow/runtime@0.8.0"
+  - "@mfeflow/storage@0.8.0"
+  - "@mfeflow/testing@0.8.0"
+  - "@mfeflow/theme@0.8.0"
+  - "@mfeflow/tsconfig@0.8.0"
+  - "@mfeflow/url-factory@0.8.0"
+  - mfeflow@0.8.0

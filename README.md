@@ -1,23 +1,17 @@
 # mfeflow examples
 
-Real-world React micro-frontend examples built with
-[mfeflow](https://github.com/mfeflow/mfeflow) and Module Federation 2.0.
+Small, runnable React micro-frontend projects made with mfeflow 0.8.0. Each folder is its own project, made by the CLI and then edited by hand. They are not a shared workspace, so you can copy one folder out and use it.
 
-> **Coming with mfeflow v0.1.**
+| Folder | What it shows |
+| --- | --- |
+| [`ecommerce`](ecommerce) | A shell with catalog, cart and checkout remotes that talk through typed events and typed links. |
+| [`dashboard`](dashboard) | A shell with orders, revenue and activity widgets that share one query cache, with i18n, a theme toggle and typed analytics. |
+| [`multi-repo`](multi-repo) | The same kind of platform split into a platform repo, a shell repo and one repo per remote. |
 
-| Example           | What it shows                                                                                                                 |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `ecommerce`       | storefront shell with catalog, cart, checkout and account remotes; mini-cart widget; typed events; GTM consent; OpenTelemetry |
-| `saas-dashboard`  | shell with analytics, billing and team remotes                                                                                |
-| `polyrepo-teams`  | the same platform split across several repositories                                                                           |
-| `adopt-existing`  | bringing an existing Module Federation project under mfeflow                                                                  |
-| `registry-server` | percentage rollouts and a kill switch with the registry server                                                                |
+Each project has its own README with the commands that made it and the commands to run it.
 
-Each example installs `@mfeflow/*` from npm and is tested in CI. Start from
-one with:
+You need Node.js 22.12 or newer and pnpm 12.16.1. CI builds, typechecks, lints and tests every folder on each pull request.
 
-```bash
-npm create mfeflow@latest my-shop -- --template gh:mfeflow/examples/ecommerce
-```
+For what mfeflow is and how it works, see the [docs](https://mfeflow.github.io/mfeflow/).
 
 MIT licensed.
