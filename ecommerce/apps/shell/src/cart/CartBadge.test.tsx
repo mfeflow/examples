@@ -1,4 +1,4 @@
-import { act, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { publish, resetEventBusForTests } from '@mfeflow/event-bus';
 import { renderWithPlatform } from '@mfeflow/testing';
 import { afterEach, describe, expect, it } from 'vitest';
@@ -20,5 +20,15 @@ describe('CartBadge', () => {
     });
     expect(screen.getByText('Cart (2)')).toBeDefined();
     stop();
+  });
+
+  it('opens the cart without a page load, and tells the shell', () => {
+    const heard: string[] = [];
+    const listen = () => heard.push(location.pathname);
+    addEventListener('popstate', listen);
+    renderWithPlatform(<CartBadge />);
+    expect(fireEvent.click(screen.getByRole('link'))).toBe(false);
+    expect(heard).toEqual(['/cart']);
+    removeEventListener('popstate', listen);
   });
 });

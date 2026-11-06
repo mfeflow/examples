@@ -8,6 +8,8 @@ Small, runnable React micro-frontend projects made with mfeflow 0.8.0. Each fold
 | [`dashboard`](dashboard) | A shell with orders, revenue and activity widgets that share one query cache, with i18n, a theme toggle and typed analytics. |
 | [`multi-repo`](multi-repo) | The same kind of platform split into a platform repo, a shell repo and one repo per remote. |
 
+Live demo: https://mfeflow.github.io/examples/ (the `ecommerce` example, deployed with mfeflow's own registry).
+
 Each project has its own README with the commands that made it and the commands to run it.
 
 You need Node.js 22.12 or newer and pnpm 12.16.1. CI builds, typechecks, lints and tests every folder on each pull request.
